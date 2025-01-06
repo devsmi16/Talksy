@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7D188A3A2D2BFB1D002012DC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A392D2BFB1D002012DC /* FirebaseAnalytics */; };
+		7D188A3C2D2BFB1D002012DC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A3B2D2BFB1D002012DC /* FirebaseAuth */; };
+		7D188A3E2D2BFB1D002012DC /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A3D2D2BFB1D002012DC /* FirebaseCore */; };
+		7D188A402D2BFB1D002012DC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A3F2D2BFB1D002012DC /* FirebaseDatabase */; };
+		7D188A422D2BFB1D002012DC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A412D2BFB1D002012DC /* FirebaseFirestore */; };
+		7D188A442D2BFB1D002012DC /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A432D2BFB1D002012DC /* FirebaseInAppMessaging-Beta */; };
+		7D188A462D2BFB1D002012DC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A452D2BFB1D002012DC /* FirebaseMessaging */; };
+		7D188A482D2BFB1D002012DC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A472D2BFB1D002012DC /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		7D4F208B2D29A134007DFD7A /* Talksy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talksy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +47,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D188A3A2D2BFB1D002012DC /* FirebaseAnalytics in Frameworks */,
+				7D188A3E2D2BFB1D002012DC /* FirebaseCore in Frameworks */,
+				7D188A462D2BFB1D002012DC /* FirebaseMessaging in Frameworks */,
+				7D188A402D2BFB1D002012DC /* FirebaseDatabase in Frameworks */,
+				7D188A422D2BFB1D002012DC /* FirebaseFirestore in Frameworks */,
+				7D188A482D2BFB1D002012DC /* FirebaseStorage in Frameworks */,
+				7D188A3C2D2BFB1D002012DC /* FirebaseAuth in Frameworks */,
+				7D188A442D2BFB1D002012DC /* FirebaseInAppMessaging-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +97,14 @@
 			);
 			name = Talksy;
 			packageProductDependencies = (
+				7D188A392D2BFB1D002012DC /* FirebaseAnalytics */,
+				7D188A3B2D2BFB1D002012DC /* FirebaseAuth */,
+				7D188A3D2D2BFB1D002012DC /* FirebaseCore */,
+				7D188A3F2D2BFB1D002012DC /* FirebaseDatabase */,
+				7D188A412D2BFB1D002012DC /* FirebaseFirestore */,
+				7D188A432D2BFB1D002012DC /* FirebaseInAppMessaging-Beta */,
+				7D188A452D2BFB1D002012DC /* FirebaseMessaging */,
+				7D188A472D2BFB1D002012DC /* FirebaseStorage */,
 			);
 			productName = Talksy;
 			productReference = 7D4F208B2D29A134007DFD7A /* Talksy.app */;
@@ -107,6 +134,9 @@
 			);
 			mainGroup = 7D4F20822D29A134007DFD7A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7D4F208C2D29A134007DFD7A /* Products */;
 			projectDirPath = "";
@@ -151,8 +181,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -179,8 +209,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +365,60 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D188A392D2BFB1D002012DC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		7D188A3B2D2BFB1D002012DC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		7D188A3D2D2BFB1D002012DC /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		7D188A3F2D2BFB1D002012DC /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		7D188A412D2BFB1D002012DC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		7D188A432D2BFB1D002012DC /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		7D188A452D2BFB1D002012DC /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		7D188A472D2BFB1D002012DC /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D4F20832D29A134007DFD7A /* Project object */;
 }
