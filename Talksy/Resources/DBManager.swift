@@ -13,8 +13,10 @@ final class DBManager {
 extension DBManager {
     
     public func userExists(with email: String, completion: @escaping ((Bool) -> Void)) {
+        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
         
-        db.child(email).observeSingleEvent(of: .value) { dataSnapshot in
+        db.child(safeEmail).observeSingleEvent(of: .value) { dataSnapshot in
             guard dataSnapshot.value as? String != nil else {
                 completion(false)
                 return
@@ -25,14 +27,21 @@ extension DBManager {
     
     /// Inserts new  user to database
     public func insertUser(with user: ChatAppUser) {
-        db.child(user.email).setValue(["first_name": user.firstName,
-                                       "last_ame": user.lastName])
+        db.child(user.safeEmail).setValue(["first_name": user.firstName,
+                                       "last_name": user.lastName])
     }
 }
 
 struct ChatAppUser {
     let firstName: String
     let lastName: String
-    let email: String
+    let emailAddress: String
+    
+    var safeEmail: String {
+        var safeEmail = emailAddress.replacingOccurrences(of: ".", with: "-")
+        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+        
+        return safeEmail
+    }
     //let profilePicUrl: String
 }

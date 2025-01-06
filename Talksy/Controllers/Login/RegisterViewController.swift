@@ -206,7 +206,7 @@ class RegisterViewController: UIViewController {
                     print("Error creating user: \(error?.localizedDescription ?? "Unknown error")")
                     return
                 }
-                DBManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, email: email))
+                DBManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
             }
             
