@@ -18,6 +18,8 @@
 		7D77DA042D2D25DE0086832F /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA032D2D25DE0086832F /* FacebookCore */; };
 		7D77DA062D2D25DE0086832F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA052D2D25DE0086832F /* FacebookLogin */; };
 		7D77DA082D2D25DE0086832F /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA072D2D25DE0086832F /* FacebookShare */; };
+		7D77DA1E2D2D85DC0086832F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA1D2D2D85DC0086832F /* GoogleSignIn */; };
+		7D77DA202D2D85DC0086832F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA1F2D2D85DC0086832F /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 				7D188A3E2D2BFB1D002012DC /* FirebaseCore in Frameworks */,
 				7D188A462D2BFB1D002012DC /* FirebaseMessaging in Frameworks */,
 				7D188A402D2BFB1D002012DC /* FirebaseDatabase in Frameworks */,
+				7D77DA202D2D85DC0086832F /* GoogleSignInSwift in Frameworks */,
+				7D77DA1E2D2D85DC0086832F /* GoogleSignIn in Frameworks */,
 				7D188A422D2BFB1D002012DC /* FirebaseFirestore in Frameworks */,
 				7D188A482D2BFB1D002012DC /* FirebaseStorage in Frameworks */,
 				7D77DA082D2D25DE0086832F /* FacebookShare in Frameworks */,
@@ -114,6 +118,8 @@
 				7D77DA032D2D25DE0086832F /* FacebookCore */,
 				7D77DA052D2D25DE0086832F /* FacebookLogin */,
 				7D77DA072D2D25DE0086832F /* FacebookShare */,
+				7D77DA1D2D2D85DC0086832F /* GoogleSignIn */,
+				7D77DA1F2D2D85DC0086832F /* GoogleSignInSwift */,
 			);
 			productName = Talksy;
 			productReference = 7D4F208B2D29A134007DFD7A /* Talksy.app */;
@@ -146,6 +152,7 @@
 			packageReferences = (
 				7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				7D77DA1C2D2D85DC0086832F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7D4F208C2D29A134007DFD7A /* Products */;
@@ -189,6 +196,8 @@
 				DEVELOPMENT_TEAM = 57D289PS4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Talksy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a photo for your profile.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -218,6 +227,8 @@
 				DEVELOPMENT_TEAM = 57D289PS4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Talksy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a photo for your profile.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -395,6 +406,14 @@
 				minimumVersion = 14.1.0;
 			};
 		};
+		7D77DA1C2D2D85DC0086832F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -452,6 +471,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookShare;
+		};
+		7D77DA1D2D2D85DC0086832F /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D77DA1C2D2D85DC0086832F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7D77DA1F2D2D85DC0086832F /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D77DA1C2D2D85DC0086832F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

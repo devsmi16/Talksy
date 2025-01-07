@@ -1,7 +1,8 @@
 import UIKit
 import FirebaseAuth
 import FacebookLogin
-
+import GoogleSignIn
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -68,8 +69,28 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    
+    private let googleLogInButton = GIDSignInButton()
+    private var loginObserver: NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLoginNotification,
+                                                               object: nil,
+                                                               queue: .main,
+                                                               using: {[weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+        })
+        
+        if let clientID = FirebaseApp.app()?.options.clientID {
+            let config = GIDConfiguration(clientID: clientID)
+            GIDSignIn.sharedInstance.configuration = config
+        }
+        
+        
+        
         title = "Login"
         view.backgroundColor = .white
         
@@ -89,6 +110,13 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(passwordField)
         scrollView.addSubview(loginButton)
         scrollView.addSubview(facebookLoginButton)
+        scrollView.addSubview(googleLogInButton)
+    }
+    
+    deinit {
+        if let observer = loginObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -123,14 +151,20 @@ class LoginViewController: UIViewController {
             width: scrollView.width - 60,
             height: 52)
         
-        let facebookButtonWidth = scrollView.width - 125
-        let facebookButtonHeight: CGFloat = 40
+        let buttonWidth = scrollView.width - 125
+        let buttonHeight: CGFloat = 40
         
         facebookLoginButton.frame = CGRect(
-            x: (scrollView.width - facebookButtonWidth) / 2,
+            x: (scrollView.width - buttonWidth) / 2,
             y: loginButton.frame.maxY + spacing,
-            width: facebookButtonWidth,
-            height: facebookButtonHeight)
+            width: buttonWidth,
+            height: buttonHeight)
+        
+        googleLogInButton.frame = CGRect(
+            x: (scrollView.width - buttonWidth) / 2,
+            y: facebookLoginButton.frame.maxY + spacing,
+            width: buttonWidth,
+            height: buttonHeight)
     }
     
     @objc private func loginButtonTapped() {
@@ -244,6 +278,4 @@ extension LoginViewController: LoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
         // no operation
     }
-    
-    
 }
