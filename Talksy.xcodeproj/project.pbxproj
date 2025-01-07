@@ -15,6 +15,9 @@
 		7D188A442D2BFB1D002012DC /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A432D2BFB1D002012DC /* FirebaseInAppMessaging-Beta */; };
 		7D188A462D2BFB1D002012DC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A452D2BFB1D002012DC /* FirebaseMessaging */; };
 		7D188A482D2BFB1D002012DC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7D188A472D2BFB1D002012DC /* FirebaseStorage */; };
+		7D77DA042D2D25DE0086832F /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA032D2D25DE0086832F /* FacebookCore */; };
+		7D77DA062D2D25DE0086832F /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA052D2D25DE0086832F /* FacebookLogin */; };
+		7D77DA082D2D25DE0086832F /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA072D2D25DE0086832F /* FacebookShare */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,13 +50,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D77DA062D2D25DE0086832F /* FacebookLogin in Frameworks */,
 				7D188A3A2D2BFB1D002012DC /* FirebaseAnalytics in Frameworks */,
 				7D188A3E2D2BFB1D002012DC /* FirebaseCore in Frameworks */,
 				7D188A462D2BFB1D002012DC /* FirebaseMessaging in Frameworks */,
 				7D188A402D2BFB1D002012DC /* FirebaseDatabase in Frameworks */,
 				7D188A422D2BFB1D002012DC /* FirebaseFirestore in Frameworks */,
 				7D188A482D2BFB1D002012DC /* FirebaseStorage in Frameworks */,
+				7D77DA082D2D25DE0086832F /* FacebookShare in Frameworks */,
 				7D188A3C2D2BFB1D002012DC /* FirebaseAuth in Frameworks */,
+				7D77DA042D2D25DE0086832F /* FacebookCore in Frameworks */,
 				7D188A442D2BFB1D002012DC /* FirebaseInAppMessaging-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +111,9 @@
 				7D188A432D2BFB1D002012DC /* FirebaseInAppMessaging-Beta */,
 				7D188A452D2BFB1D002012DC /* FirebaseMessaging */,
 				7D188A472D2BFB1D002012DC /* FirebaseStorage */,
+				7D77DA032D2D25DE0086832F /* FacebookCore */,
+				7D77DA052D2D25DE0086832F /* FacebookLogin */,
+				7D77DA072D2D25DE0086832F /* FacebookShare */,
 			);
 			productName = Talksy;
 			productReference = 7D4F208B2D29A134007DFD7A /* Talksy.app */;
@@ -136,6 +145,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7D4F208C2D29A134007DFD7A /* Products */;
@@ -173,6 +183,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Talksy/Talksy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57D289PS4W;
@@ -201,6 +212,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Talksy/Talksy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57D289PS4W;
@@ -375,6 +387,14 @@
 				minimumVersion = 11.6.0;
 			};
 		};
+		7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -417,6 +437,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		7D77DA032D2D25DE0086832F /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		7D77DA052D2D25DE0086832F /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		7D77DA072D2D25DE0086832F /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
