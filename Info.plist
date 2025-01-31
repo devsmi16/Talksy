@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Facebook Setup -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1287179855922954</string>
+            </array>
+        </dict>
+        <!-- Google Sign-In Setup -->
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>175740109639-5725lnvfd02q1dt1r83n0d9hqvn3greh.apps.googleusercontent.com</string>
+            </array>
+        </dict>
+    </array>
+
+    <!-- Facebook Configuration -->
+    <key>FacebookAppID</key>
+    <string>1287179855922954</string>
+    <key>FacebookClientToken</key>
+    <string>c33d9bbe986cdfaa105d30cc88717f7e</string>
+    <key>FacebookDisplayName</key>
+    <string>Talksy</string>
+
+    <!-- Application Queries for Facebook -->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+    </array>
+
+    <!-- Google Sign-In Configuration -->
+    <key>GoogleSignIn</key>
+    <dict>
+        <key>ClientID</key>
+        <string>175740109639-5725lnvfd02q1dt1r83n0d9hqvn3greh.apps.googleusercontent.com</string>
+    </dict>
+
+    <!-- Scene Manifest (for iOS 13 and later) -->
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UIApplicationSupportsMultipleScenes</key>
+        <false/>
+        <key>UISceneConfigurations</key>
+        <dict>
+            <key>UIWindowSceneSessionRoleApplication</key>
+            <array>
+                <dict>
+                    <key>UISceneConfigurationName</key>
+                    <string>Default Configuration</string>
+                    <key>UISceneDelegateClassName</key>
+                    <string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+                    <key>UISceneStoryboardFile</key>
+                    <string>Main</string>
+                </dict>
+            </array>
+        </dict>
+    </dict>
+</dict>
+</plist>

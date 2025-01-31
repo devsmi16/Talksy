@@ -20,7 +20,27 @@
 		7D77DA082D2D25DE0086832F /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA072D2D25DE0086832F /* FacebookShare */; };
 		7D77DA1E2D2D85DC0086832F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA1D2D2D85DC0086832F /* GoogleSignIn */; };
 		7D77DA202D2D85DC0086832F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7D77DA1F2D2D85DC0086832F /* GoogleSignInSwift */; };
+		7DC0D87D2D4CEABA00A73BE8 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0D87C2D4CEABA00A73BE8 /* MessageKit */; };
+		7DC0D8802D4CEB2F00A73BE8 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0D87F2D4CEB2F00A73BE8 /* JGProgressHUD */; };
+		7DC0D8852D4CEC4C00A73BE8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0D8842D4CEC4C00A73BE8 /* RealmSwift */; };
+		7DC0D8862D4CEDA100A73BE8 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0D8842D4CEC4C00A73BE8 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7DC0D88A2D4CEE2000A73BE8 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0D8892D4CEE2000A73BE8 /* SDWebImage */; };
+		7DC0D88C2D4CEE2000A73BE8 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0D88B2D4CEE2000A73BE8 /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DC0D8872D4CEDA100A73BE8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7DC0D8862D4CEDA100A73BE8 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D4F208B2D29A134007DFD7A /* Talksy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talksy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,16 +75,21 @@
 				7D77DA062D2D25DE0086832F /* FacebookLogin in Frameworks */,
 				7D188A3A2D2BFB1D002012DC /* FirebaseAnalytics in Frameworks */,
 				7D188A3E2D2BFB1D002012DC /* FirebaseCore in Frameworks */,
+				7DC0D87D2D4CEABA00A73BE8 /* MessageKit in Frameworks */,
+				7DC0D8802D4CEB2F00A73BE8 /* JGProgressHUD in Frameworks */,
 				7D188A462D2BFB1D002012DC /* FirebaseMessaging in Frameworks */,
 				7D188A402D2BFB1D002012DC /* FirebaseDatabase in Frameworks */,
 				7D77DA202D2D85DC0086832F /* GoogleSignInSwift in Frameworks */,
+				7DC0D8852D4CEC4C00A73BE8 /* RealmSwift in Frameworks */,
 				7D77DA1E2D2D85DC0086832F /* GoogleSignIn in Frameworks */,
+				7DC0D88C2D4CEE2000A73BE8 /* SDWebImageMapKit in Frameworks */,
 				7D188A422D2BFB1D002012DC /* FirebaseFirestore in Frameworks */,
 				7D188A482D2BFB1D002012DC /* FirebaseStorage in Frameworks */,
 				7D77DA082D2D25DE0086832F /* FacebookShare in Frameworks */,
 				7D188A3C2D2BFB1D002012DC /* FirebaseAuth in Frameworks */,
 				7D77DA042D2D25DE0086832F /* FacebookCore in Frameworks */,
 				7D188A442D2BFB1D002012DC /* FirebaseInAppMessaging-Beta in Frameworks */,
+				7DC0D88A2D4CEE2000A73BE8 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +122,7 @@
 				7D4F20872D29A134007DFD7A /* Sources */,
 				7D4F20882D29A134007DFD7A /* Frameworks */,
 				7D4F20892D29A134007DFD7A /* Resources */,
+				7DC0D8872D4CEDA100A73BE8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +146,11 @@
 				7D77DA072D2D25DE0086832F /* FacebookShare */,
 				7D77DA1D2D2D85DC0086832F /* GoogleSignIn */,
 				7D77DA1F2D2D85DC0086832F /* GoogleSignInSwift */,
+				7DC0D87C2D4CEABA00A73BE8 /* MessageKit */,
+				7DC0D87F2D4CEB2F00A73BE8 /* JGProgressHUD */,
+				7DC0D8842D4CEC4C00A73BE8 /* RealmSwift */,
+				7DC0D8892D4CEE2000A73BE8 /* SDWebImage */,
+				7DC0D88B2D4CEE2000A73BE8 /* SDWebImageMapKit */,
 			);
 			productName = Talksy;
 			productReference = 7D4F208B2D29A134007DFD7A /* Talksy.app */;
@@ -153,6 +184,10 @@
 				7D188A382D2BFB1D002012DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7D77DA022D2D1C690086832F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				7D77DA1C2D2D85DC0086832F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				7DC0D87B2D4CEABA00A73BE8 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				7DC0D87E2D4CEB2F00A73BE8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				7DC0D8812D4CEC4C00A73BE8 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				7DC0D8882D4CEE2000A73BE8 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7D4F208C2D29A134007DFD7A /* Products */;
@@ -414,6 +449,38 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		7DC0D87B2D4CEABA00A73BE8 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7DC0D87E2D4CEB2F00A73BE8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+		7DC0D8812D4CEC4C00A73BE8 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7DC0D8882D4CEE2000A73BE8 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -481,6 +548,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D77DA1C2D2D85DC0086832F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		7DC0D87C2D4CEABA00A73BE8 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DC0D87B2D4CEABA00A73BE8 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+		7DC0D87F2D4CEB2F00A73BE8 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DC0D87E2D4CEB2F00A73BE8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+		7DC0D8842D4CEC4C00A73BE8 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DC0D8812D4CEC4C00A73BE8 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		7DC0D8892D4CEE2000A73BE8 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DC0D8882D4CEE2000A73BE8 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		7DC0D88B2D4CEE2000A73BE8 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DC0D8882D4CEE2000A73BE8 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

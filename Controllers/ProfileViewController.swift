@@ -14,8 +14,10 @@ class ProfileViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
-    
+        
+        
     }
+    
 
 }
 
