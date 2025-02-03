@@ -62,9 +62,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         DBManager.shared.userExists(with: email) { exists in
             if !exists {
-                DBManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
-                                                              lastName: lastName,
-                                                              emailAddress: email))
+                let chatUser = ChatAppUser(firstName: firstName,
+                                           lastName: lastName,
+                                           emailAddress: email)
+                DBManager.shared.insertUser(with: chatUser, completion: {success in
+                    if success {
+                        
+                        if user.profile!.hasImage {
+                            guard let url = user.profile!.imageURL(withDimension: 128) else { return }
+                            
+                            URLSession.shared.dataTask(with: url) { data, url, error in
+                                guard let data = data else{
+                                    print("failed to get data from fb")
+                                    return
+                                }
+                                
+                                let fileName = chatUser.profilePictureFileName
+                                
+                                StorageManager.shared.uploadProfilePic(with: data, fileName: fileName, completion: { result in
+                                    switch result {
+                                    case .success(let downloadURL):
+                                        UserDefaults.standard.set(downloadURL, forKey: "profile_picture_url")
+                                        print(downloadURL)
+                                        
+                                        case .failure(let error):
+                                        print("Storage manager error \(error)")
+                                    }
+                                })
+                            } .resume()
+                        }
+                    }
+                })
             }
         }
         let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)

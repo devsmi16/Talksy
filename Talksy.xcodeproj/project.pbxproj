@@ -100,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4F208D2D29A134007DFD7A /* Talksy */,
+				7D95A0A52D50B61100A56482 /* Frameworks */,
 				7D4F208C2D29A134007DFD7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +111,13 @@
 				7D4F208B2D29A134007DFD7A /* Talksy.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7D95A0A52D50B61100A56482 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
