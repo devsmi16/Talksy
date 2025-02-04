@@ -56,10 +56,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
-        let email = profile.email
-        let firstName = profile.givenName ?? "First Name Not Available"
-        let lastName = profile.familyName ?? "Last Name Not Available"
-
+        guard let email = user.profile?.email,
+              let firstName = profile.givenName,
+              let lastName = profile.familyName else {
+            return
+        }
+        
+        UserDefaults.standard.set(email, forKey: "email")
+        
         DBManager.shared.userExists(with: email) { exists in
             if !exists {
                 let chatUser = ChatAppUser(firstName: firstName,

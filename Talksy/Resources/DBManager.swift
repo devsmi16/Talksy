@@ -6,6 +6,11 @@ final class DBManager {
     
     private let db = Database.database().reference()
 
+    static func safeEmail(_ email: String) -> String {
+        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+        return safeEmail
+    }
 }
  
 // MARK: - Account Management
@@ -35,9 +40,52 @@ extension DBManager {
                 completion(false)
                 return
             }
+            
+            self.db.child("users").observeSingleEvent(of: .value) { snapshot in
+                if var usersCollection = snapshot.value as? [[String: String]] {
+                    let newUser = ["name": user.firstName + " " + user.lastName,
+                                   "email": user.safeEmail]
+                    
+                    usersCollection.append(newUser)
+                    
+                    self.db.child("users").setValue(usersCollection) { error, _ in
+                        if let error = error {
+                            print("Error updating users: \(error.localizedDescription)")
+                        } else {
+                            print("User added successfully.")
+                        }
+                    }
+                } else {
+                    let newCollection: [[String: String]] = [["name": user.firstName + " " + user.lastName,
+                                                              "email": user.safeEmail]]
+                    
+                    self.db.child("users").setValue(newCollection) { error, _ in
+                        if let error = error {
+                            print("Error creating users array: \(error.localizedDescription)")
+                        } else {
+                            print("User collection created successfully.")
+                        }
+                    }
+                }
+            }
             completion(true)
         })
     }
+    
+    public func getAllUsers(completion: @escaping (Result<[[String: String]], Error>) -> Void){
+        db.child("users").observeSingleEvent(of: .value) { snapshot in
+            guard let value = snapshot.value as? [[String: String]] else {
+                completion(.failure(dataBaseError.failedToFetch))
+                return
+            }
+            completion(.success(value))
+        }
+    }
+    
+    public enum dataBaseError: Error {
+        case failedToFetch
+    }
+    
 }
 
 struct ChatAppUser {

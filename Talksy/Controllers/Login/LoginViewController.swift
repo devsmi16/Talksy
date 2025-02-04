@@ -194,6 +194,9 @@ class LoginViewController: UIViewController {
                 return
             }
             let user = result.user
+            
+            UserDefaults.standard.set(email, forKey: "email")
+            
             print("Logged in user: \(user)")
             strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         }
@@ -254,11 +257,11 @@ extension LoginViewController: LoginButtonDelegate {
                   let data = picture["data"] as? [String: Any],
                   let pictureUrl = data["url"] as? String,
                   let url = URL(string: pictureUrl) else {
-                print("Failed to get mail and name from Facebook result!")
+                print("Failed to get mail and name from fb result!")
                 return
             }
 
-            print("Profile Picture URL: \(url)")
+            UserDefaults.standard.set(email, forKey: "email")
             
             DBManager.shared.userExists(with: email) { exists in
                 if !exists {
