@@ -59,20 +59,26 @@ class ChatViewController: MessagesViewController {
     }()
     
     public let otherUserEmail: String
+    public let conversationId: String
     public var isNewConversation = false
     
     private var messages = [Message]()
     private var selfSender: Sender? = {
         guard let email = UserDefaults.standard.string(forKey: "email") else { return nil }
+        
+        let safeEmail = DBManager.safeEmail(email) 
+        
         return Sender(photoURL: "",
                senderId: email,
                displayName: "Chat")
     }()
     
-    
-    init(with email: String) {
+    init(with email: String, id: String?) {
         self.otherUserEmail = email
+        self.conversationId = id ?? UUID().uuidString
         super.init(nibName: nil, bundle: nil)
+        
+        listeningForMessages(id: conversationId)
     }
     
     @MainActor required init?(coder: NSCoder) {
@@ -87,8 +93,29 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
-
     }
+    
+    private func listeningForMessages(id: String) {
+        DBManager.shared.getAllMessagesForConversation(with: id) { result in
+            switch result {
+            case .success(let messages):
+                print("success in getting messages: \(messages)")
+                guard !messages.isEmpty else {
+                    print("messages are empty")
+                    return
+                }
+                self.messages = messages
+                
+                DispatchQueue.main.async {
+                    self.messagesCollectionView.reloadDataAndKeepOffset()
+                }
+                
+            case .failure(let error):
+                print("failed to get messages: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         messageInputBar.inputTextView.becomeFirstResponder()
@@ -111,7 +138,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                                   sentDate: Date(),
                                   kind: .text(text))
             
-            DBManager.shared.createNewConversation(with: otherUserEmail,
+            DBManager.shared.createNewConversation(with: otherUserEmail, name: self.title ?? "User",
                                                    firstMessage: message,
                                                    completion: {success in
                 if success {
@@ -140,11 +167,12 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
 
 extension ChatViewController: MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     var currentSender: any MessageKit.SenderType {
-        guard let sender = selfSender else {
+        guard selfSender != nil else {
             fatalError("self sender is nil, email should not be cached")
         }
         return Sender(photoURL: "", senderId: "16", displayName: "")
     }
+    
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> any MessageKit.MessageType {
         return messages[indexPath.section]
     }
